@@ -10,7 +10,21 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+
+	// Add any additional listeners here
+	// example: $("#div-id").click(functionToCall);
+	$(".friend a").click(nameClick);
 }
+
+function nameClick(e) {
+    console.log("Name clicked");
+    e.preventDefault();	
+
+	var nameOfPerson = $(this).text();
+	$(this).text(anagrammedName(nameOfPerson));
+	
+}
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
